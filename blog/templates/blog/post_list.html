@@ -11,19 +11,12 @@
       <h1><a href="/">Rio's blog</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-      <p>published: 14.05.2014, 12:14</p>
-      <h2><a href="">My first post</a></h2>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi, fuga.
-      </p>
+      <p>published: {{ post.published_date }}</p>
+      <h2><a href="">{{ post.title }}</a></h2>
+      <p>{{ post.text|linebreaksbr }}</p>
     </div>
-
-    <div>
-      <h2><a href="">Lorem, ipsum dolor.</a></h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, tempore!
-      </p>
-    </div>
+    {% endfor %}
   </body>
 </html>
