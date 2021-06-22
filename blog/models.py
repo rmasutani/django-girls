@@ -6,6 +6,7 @@ from django.utils import timezone
 
 
 class Post(models.Model):
+    # 以下のフィールドは「なくてもよい」とは書かれていないので値が設定されることが期待される.
     author = models.ForeignKey(
         settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     title = models.CharField(max_length=200)
